@@ -21,10 +21,14 @@ for (let i = 0; i < galleryItems.length; i++) {
 
 divGallery.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(e.target);
-  const instance = basicLightbox.create(`
+  console.log(e.target.classList.value);
+  if (e.target.classList.value === "gallery__image") {
+    const instance = basicLightbox.create(`
     <img src="${e.target.dataset.source}" width="1280" height="720">
 `);
 
-  instance.show();
+    instance.show();
+  } else {
+    return;
+  }
 });
