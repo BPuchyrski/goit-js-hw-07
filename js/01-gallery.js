@@ -18,3 +18,13 @@ for (let i = 0; i < galleryItems.length; i++) {
   img.dataset.source = `${galleryItems[i].original}`;
   link.setAttribute("href", `${galleryItems[i].original}`);
 }
+
+const img = document.querySelector(".gallery__image");
+img.addEventListener("click", (e) => {
+  e.preventDefault();
+  const instance = basicLightbox.create(`
+    <img src="${e.currentTarget.original}" width="800" height="600">
+`);
+
+  instance.show();
+});
