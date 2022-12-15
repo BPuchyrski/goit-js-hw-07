@@ -21,9 +21,9 @@ for (let i = 0; i < galleryItems.length; i++) {
 
 divGallery.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(e.target.src);
+  console.log(e.target);
   const instance = basicLightbox.create(`
-    <img src="${e.target.src}" width="800" height="600">
+    <img src="${e.target.dataset.source}" width="1280" height="720">
 `);
 
   instance.show();
