@@ -19,11 +19,11 @@ for (let i = 0; i < galleryItems.length; i++) {
   link.setAttribute("href", `${galleryItems[i].original}`);
 }
 
-const img = document.querySelector(".gallery__image");
+const img = document.querySelectorAll(".gallery__image");
 img.addEventListener("click", (e) => {
   e.preventDefault();
   const instance = basicLightbox.create(`
-    <img src="${e.currentTarget.original}" width="800" height="600">
+    <img src="${e.target}" width="800" height="600">
 `);
 
   instance.show();
